@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 
 export default class Profil extends Component {
-
+    componentDidMount(){
+        this.setState({
+            timer: setInterval(() => {
+                console.log('time appele')
+            }, 1000)
+        });
+    }
+    componentWillUnmount(){
+        console.log('component demonté')
+        clearInterval(this.state.timer)}    
 
     render() {
         return (
@@ -12,6 +21,7 @@ export default class Profil extends Component {
                     <h4>
                         {this.props.profession}
                     </h4> 
+                    
                 
             </div>
         )

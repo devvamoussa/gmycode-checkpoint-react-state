@@ -3,6 +3,8 @@ import './App.css';
 import Image from "./Image/unsplash.jpg";
 import React, { Component } from 'react';
 import Profil from "./Component/Profil";
+// import Interval from "./Component/Interval"
+
 
 export default class App extends Component {
   state ={
@@ -10,11 +12,11 @@ export default class App extends Component {
     bio:"j'aime le dev",
     imgSrc: Image , 
     profession: "Etudians",
-    show: true
+    show: false
   }
   render() {
     return (
-      <div>
+      <div className="container">
                 {
                     this.state.show ?
                     <Profil  
@@ -22,10 +24,11 @@ export default class App extends Component {
                     bio={this.state.bio}
                     imgSrc={this.state.imgSrc}
                     profession={this.state.profession}
-                    />
+                    border='1px solid black'/>
                     :null
                 }
-                <button className="" onClick={() => this.setState({show: !this.state.show})} >Changer</button>
+                <button className="" onClick={() => this.setState({show: !this.state.show})} >Afficher</button>
+                {/* <Interval/> */}
       </div>
     )
   }
